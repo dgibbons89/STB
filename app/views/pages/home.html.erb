@@ -1,0 +1,12 @@
+
+<div class="jumbotron center">
+     <h1>Welcome to my app!</h1>
+     <p>
+	
+		<%= link_to "Sign in with Facebook", "auth/facebook" %>
+	
+	<% flash.each do |name, msg| %>
+		<%= content_tag :div, msg, id: "flash_#{name}" %>
+	<% end %>	
+</div>
+
