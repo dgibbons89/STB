@@ -1,0 +1,8 @@
+<%= link_to "Add Picture", new_picture_path %>
+
+<% @pictures_each do |picture| %>
+	<p>
+		Zip_Code: <%= link_to picture.zip, picture_path(picture) %><br /> 
+		Image: <%= picture.image %> | <%= link_to "Edit", edit_picture_path(drink) %> |  <%= link_to 'Delete', picture, method: :delete %>
+	</p>
+<% end %>

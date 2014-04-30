@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
+ruby '2.0.0'
 
-
+gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'omniauth-facebook'
 gem 'bootstrap-sass'
 gem 'rails', '4.1.0'

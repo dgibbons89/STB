@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-
+resources :pictures
+resources :users
+resources :videos	
 
   root "pages#home"
   get "faq" => "pages#faq"
