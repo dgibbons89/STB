@@ -1,8 +1,31 @@
-<%= link_to "Add Picture", new_picture_path %>
+<%= render 'pages/home' unless user_signed_in? %>
 
-<% @pictures_each do |picture| %>
-	<p>
-		Zip_Code: <%= link_to picture.zip, picture_path(picture) %><br /> 
-		Image: <%= picture.image %> | <%= link_to "Edit", edit_picture_path(drink) %> |  <%= link_to 'Delete', picture, method: :delete %>
-	</p>
-<% end %>
+<div id="pictures" class="transitions-enabled">
+  <% @pictures.each do |picture| %>
+    <div class="box panel panel-default">
+      <%= link_to image_tag(picture.image.url(:medium)), picture %>
+      <div class="panel-body">
+        <%= picture.description %><br/>
+        <strong><%= picture.user.name if picture.user %></strong>
+        
+        <% if current_user && picture.user == current_user %>
+          <div class="actions">
+                 <%= link_to edit_picture_path(pin) do %>
+              <span class="glyphicon glyphicon-edit"></span>
+              Edit
+            <% end %>
+            <%= link_to picture, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <span class="glyphicon glyphicon-trash"></span>
+              Delete
+            <% end %>
+            
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="center">
+   <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+</div>
