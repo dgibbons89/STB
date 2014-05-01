@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users
   resources :videos	
 
-  root "pages#home"
+  root "pictures#index"
   get "faq" => "pages#faq"
   get "resources" => "pages#resources"
 
