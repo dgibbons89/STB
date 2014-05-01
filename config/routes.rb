@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-resources :pictures
-resources :users
-resources :videos	
+  resources :pictures
+  resources :users
+  resources :videos	
 
   root "pages#home"
   get "faq" => "pages#faq"

@@ -1,5 +1,5 @@
 class PicturesController < ApplicationController
-  before_action :set_pin, only: [:show, :edit, :update, :destroy]
+  before_action :set_picture, only: [:show, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
@@ -11,14 +11,14 @@ class PicturesController < ApplicationController
   end
 
   def new
-    @picture = current_user.pictures.build
+    @picture = Pin.new
   end
 
   def edit
   end
 
   def create
-    @picture = current_user.pictures.build(picture_params)
+    @picture = Picture.new(pin_params)
     if @picture.save
       redirect_to @picture, notice: 'Picture was successfully created.'
     else
