@@ -173,6 +173,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass
+  cocaine (~> 0.5.3)
   coffee-rails (~> 4.0.0)
   devise (~> 3.2.4)
   jbuilder (~> 2.0)

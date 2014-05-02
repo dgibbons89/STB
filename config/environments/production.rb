@@ -82,5 +82,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
     #required for heroku/set to actual host name
-  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  config.action_mailer.default_url_options = { host: 'dolchayplay.herokuapp.com' }
 end
