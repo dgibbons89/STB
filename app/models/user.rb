@@ -7,5 +7,7 @@ class User < ActiveRecord::Base
 	has_many :authentications
 	has_many :pictures 
 
+	validates :name, presence: true
+
 	
 end

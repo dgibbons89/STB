@@ -18,6 +18,11 @@
       <li><%= link_to "FAQ", faq_path %></li>  
       <li><%= link_to "Resources", resources_path %></li>
       <% if user_signed_in? %>
+          <li>
+            <%= link_to new_picture_path do %>
+              <span class="glyphicon glyphicon-plus"></span> New Picture
+            <% end %>
+          </li>
           <li><%= link_to "Account Settings", edit_user_registration_path %></li>
           <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
       <% else %>
