@@ -17,6 +17,8 @@ gem 'devise', '~> 3.2.4'
 gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
 gem 'masonry-rails', '~> 0.2.0'
+gem 'unicorn'
+gem 'kgio', '~> 2.9.2'
 
 group :development, :test do
      gem 'sqlite3'
