@@ -3,6 +3,7 @@ ruby '2.0.0'
 
 gem 'paperclip', '~> 3.0'
 gem 'cocaine', '~> 0.5.3'
+gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'bootstrap-sass'
 gem 'rails', '4.1.0'
