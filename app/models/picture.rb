@@ -1,5 +1,5 @@
 class Picture < ActiveRecord::Base
-	attr_accessor  :image_file_name, :image_content_type, :image_file_size, :image_updated_at
+	attr_accessor  :image_file_name, :image_content_type
 	belongs_to :user
 	has_attached_file :image, :styles => { :large => "300x300>"}
 validates :zip, presence: true, numericality: { only_integer: true }
