@@ -11,7 +11,7 @@
     <p><strong><%= @picture.user.name if @picture.user %></strong></p>
 
     <% if @picture.user == current_user %>
-      <%= link_to edit_pin_path(@pin) do %>
+      <%= link_to edit_picture_path(@picture) do %>
         <span class="glyphicon glyphicon-edit"></span>
         Edit
       <% end %>

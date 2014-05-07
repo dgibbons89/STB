@@ -10,7 +10,7 @@
         
         <% if current_user && picture.user == current_user %>
           <div class="actions">
-                 <%= link_to edit_picture_path(pin) do %>
+                 <%= link_to edit_picture_path(picture) do %>
               <span class="glyphicon glyphicon-edit"></span>
               Edit
             <% end %>

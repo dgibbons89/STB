@@ -11,14 +11,14 @@ class PicturesController < ApplicationController
   end
 
   def new
-    @picture = Picture.new
+    @picture = current_user.pictures.build
   end
 
   def edit
   end
 
   def create
-    @picture = Picture.new(picture_params)
+    @picture = current_user.pictures.build(picture_params)
     if @picture.save
       redirect_to @picture, notice: 'Picture was successfully created.'
     else
@@ -27,7 +27,7 @@ class PicturesController < ApplicationController
   end
 
   def update
-    if @picture.update(picture_params)
+    if  @picture.update(picture_params)
       redirect_to @picture, notice: 'Picture was successfully updated.'
     else
       render action: 'edit'
