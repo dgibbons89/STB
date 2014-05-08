@@ -7,6 +7,10 @@ class PicturesController < ApplicationController
     @pictures = Picture.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 15)
   end
 
+  def search
+    @pictures = Picture.search.params[:zip].order("created_at DESC")
+  end
+  
   def show
   end
 

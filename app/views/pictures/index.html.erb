@@ -1,12 +1,23 @@
 <%= render 'pages/home' unless user_signed_in? %>
+<p>
+  <h4>Search by Zip Code</h4>
+<%= form_tag(pictures_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Zip Code" %>
+  <%= submit_tag "Search", :zip => nil %>
+<% end %>
+</p>
+</br>
+<p>
+<%= link_to new_picture_path do %> <span class="glyphicon glyphicon-plus"></span> Add a Picture <% end %>
+</p>
 
 <div id="pictures" class="transitions-enabled">
   <% @pictures.each do |picture| %>
     <div class="box panel panel-default">
       <%= link_to image_tag(picture.image.url(:medium)), picture %>
       <div class="panel-body">
-        <%= picture.zip %><br/>
-        <strong><%= picture.user.name if picture.user %></strong>
+        <strong><%= picture.zip %><br/></strong>
+        
         
         <% if current_user && picture.user == current_user %>
           <div class="actions">

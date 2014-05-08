@@ -1,8 +1,10 @@
 class Picture < ActiveRecord::Base
 	belongs_to :user
-	attr_accessor  :image_file_name, :image_content_type
+	attr_accessor  :image_file_name, :image_content_type, :image
 
-	
+	def self.search(query)
+  		where("zip like ?", "%#{query}%") 
+	end
 
 	has_attached_file :image, :styles => { :large => "300x300>"}
 
