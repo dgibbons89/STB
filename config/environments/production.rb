@@ -82,7 +82,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
     #required for heroku/set to actual host name
-  config.action_mailer.default_url_options = { host: 'powerful-fjord-1843.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'safe-brook-9428.herokuapp.com' }
 
 
   #this sets paperclip to go to heroku amazon s3
