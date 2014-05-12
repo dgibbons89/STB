@@ -1,6 +1,6 @@
 class Picture < ActiveRecord::Base
 	belongs_to :user
-	attr_accessor  :image_file_name, :image_content_type, :image
+	attr_accessor  :image_file_name, :image_content_type, :image, :zip
 
 	def self.search(query)
   		where("zip like ?", "%#{query}%") 

@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.0.0'
 
-gem "paperclip", '~> 3.5.0'
+gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'cocaine', '~> 0.5.3'
 gem 'omniauth'
 gem 'omniauth-facebook', '~> 1.4.0'
@@ -19,7 +19,7 @@ gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
 gem 'masonry-rails', '~> 0.2.0'
 gem 'aws-sdk', '~> 1.20.0'
-
+gem 'fb_graph'
 
 
 group :development, :test do

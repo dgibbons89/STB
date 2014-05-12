@@ -1,5 +1,5 @@
 class CreatePictures < ActiveRecord::Migration
-  def change
+  def self.up
     create_table :pictures do |t|
       t.string :zip
       t.attachment :image
