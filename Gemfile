@@ -22,6 +22,7 @@ gem 'aws-sdk', '~> 1.20.0'
 gem 'fb_graph'
 
 
+
 group :development, :test do
      gem 'sqlite3'
 end

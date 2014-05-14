@@ -11,10 +11,12 @@ class PicturesController < ApplicationController
     end
   end
   
-
-  def search
-    @pictures = Picture.search(params)
+  def upvote
+    @picture = Picture.find(params[:id])
+    @picture.votes.create
+    redirect_to picture_path, :notice => "You know this person!"
   end
+ 
   
   def show
   end

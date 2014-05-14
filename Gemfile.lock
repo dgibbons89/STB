@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/thoughtbot/paperclip.git
-  revision: a1e33538c54511baa5ed61e763de2d4848208436
+  revision: 266a32a5230af67e397e92a9e8c2f314ff4fe555
   specs:
     paperclip (4.1.1)
       activemodel (>= 3.0.0)
@@ -87,7 +87,8 @@ GEM
       railties (>= 3.1.0)
       turbolinks
     json (1.8.1)
-    jwt (0.1.12)
+    jwt (0.1.13)
+      multi_json (>= 1.5)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -179,7 +180,7 @@ GEM
       coffee-rails
     tzinfo (1.1.0)
       thread_safe (~> 0.1)
-    tzinfo-data (1.2014.2)
+    tzinfo-data (1.2014.3)
       tzinfo (>= 1.0.0)
     uglifier (2.5.0)
       execjs (>= 0.3.0)

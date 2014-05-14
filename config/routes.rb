@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :pictures
+  resources :pictures do
+  	member do
+  		post 'upvote'
+  	end
+  end
   resources :users
   resources :videos	
 

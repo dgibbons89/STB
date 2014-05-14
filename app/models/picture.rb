@@ -1,5 +1,6 @@
 class Picture < ActiveRecord::Base
 	belongs_to :user
+	has_many :votes
 	
 
 	
@@ -13,6 +14,8 @@ class Picture < ActiveRecord::Base
 	def self.search(query)
   		where("zip like ?", "%#{query}%") 
 	end
+
+	
 end
 
 

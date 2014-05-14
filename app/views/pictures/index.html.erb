@@ -19,7 +19,9 @@
       <%= link_to image_tag(picture.image.url(:medium)), picture %>
       <div class="panel-body"> Zip Code
         <p><strong><%= picture.zip %></strong></p>
-        
+        <%= picture.votes.count %> People know this person. 
+        <%= button_to "I know this person", upvote_picture_path(picture), method: :post %>
+         
         
         <% if current_user && picture.user == current_user %>
           <div class="actions">
