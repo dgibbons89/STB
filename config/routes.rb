@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users,
-  controllers: {omniauth_callbacks: "authentications", registrations: "registrations"}
+  devise_for :users
 
 
   resources :pictures do
@@ -16,7 +15,7 @@ Rails.application.routes.draw do
   get "resources" => "pages#resources"
 
 
-get 'auth/:provider/callback', to: 'sessions#create'
+match '/auth/:provider/callback' => 'authentications#create'
 get 'auth/failure', to: redirect('/')
 get 'signout', to: 'sessions#destroy', as: 'signout'
 end

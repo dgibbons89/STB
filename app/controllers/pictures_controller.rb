@@ -3,6 +3,8 @@ class PicturesController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
+
+
   def index
     if params[:search]
       @pictures = Picture.search(params[:search]).order("created_at DESC").paginate(:page => params[:page], :per_page => 15)

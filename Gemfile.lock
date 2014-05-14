@@ -206,6 +206,7 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   masonry-rails (~> 0.2.0)
+  oauth2
   omniauth
   omniauth-facebook (~> 1.4.0)
   paperclip!
