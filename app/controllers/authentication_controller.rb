@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class AuthenticationsController < ActiveRecord::Base
  def create
     user = User.from_omniauth(env["omniauth.auth"])
     session[:user_id] = user.id
