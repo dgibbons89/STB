@@ -1,5 +1,6 @@
 <%= render 'pages/home' unless user_signed_in? %>
 <center><p>
+  <% if user_signed_in? %>
   <h4>Search by Zip Code</h4>
   <%= form_tag(pictures_path, :method => "get", id: "search-form") do %>
   <%= text_field_tag :search, params[:search], placeholder: "Search Zip Code" %>
