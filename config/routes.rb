@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
 
   resources :pictures do
@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
   resources :users
   resources :videos	
+  
 
   root "pictures#index"
   get "faq" => "pages#faq"
