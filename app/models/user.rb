@@ -15,7 +15,9 @@ class User < ActiveRecord::Base
   authentications.build(:provider => auth['provider'], :uid => auth['uid'], :token => auth['credentials']['token'])
 end
 
-  
+  def self.find_or_create_by_facebook(data)
+    self.find_or_create_by_facebook_id(data['extra']['raw_info']['id'], :facebook_token => data['credentials']['token'])
+  end
 
   validates :name, presence: true
 end
