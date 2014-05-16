@@ -1,2 +1,23 @@
 <dt>Email</dt>
-<dd><%= current_user.profile.email %></dd>
+<dd><%= current_user.email %></dd>
+
+<% unless @user_fb_token.blank?%>
+<% unless @fb_friends.blank? %>
+
+<% @fb_friends.each do |fb_friend| %>
+<div class='float-left fb-avatar-section'>
+
+<div class='float-left fb-avatar-desc'>
+<div class='float-left full-width fb-avatar-name' id="fb_name_<%= fb_friend.identifier%>">
+<%= fb_friend.raw_attributes['name'] %>
+</div>
+<div>
+</div>
+<% end %>
+
+<% else %>
+You do not have any facebook friends to invite
+<% end %>
+<% else %>
+<%= link_to('Connect to facebook', user_omniauth_authorize_path('facebook'), :class => 'display-block ') %>
+<% end %>
