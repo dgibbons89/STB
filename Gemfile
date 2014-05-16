@@ -22,6 +22,7 @@ gem 'aws-sdk', '~> 1.20.0'
 gem 'fb_graph'
 gem 'oauth2'
 gem 'certified', '~> 0.1.2'
+gem 'koala', '~> 1.9.0'
 
 
 
