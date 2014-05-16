@@ -3,7 +3,7 @@
 
 Devise.setup do |config|
    config.omniauth :facebook, "675585185824524", "aa5adc9f89aefb6240ad211b5519b209", 
-  {:scope => 'email, offline_access', :display => "popup", :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}} 
+  :scope => 'email, offline_access', :display => "popup"
   
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
