@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :users
   resources :videos	
 
-  resources :friends, only: => [:index] do
+  resources :friends, only: [:index] do
     post 'fb_friends', on => :collection
   end
 end
