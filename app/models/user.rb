@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   has_many :pictures, dependent: :destroy
   has_many :authentications, :dependent => :delete_all
-  
+  has_one :facebook_access_token
   def apply_omniauth(auth)
   # In previous omniauth, 'user_info' was used in place of 'raw_info'
   self.email = auth['extra']['raw_info']['email']
