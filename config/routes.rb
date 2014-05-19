@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   end
   resources :users
   resources :videos	
+
+  resources :friends, : only => [:index] do
+    post 'fb_friends', : on => :collection
+  end
   
 
   root "pictures#index"
