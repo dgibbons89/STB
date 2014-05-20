@@ -1,4 +1,22 @@
 <dt>Email</dt>
 <dd><%= current_user.email %></dd>
-<dd><%= current_user.user_friends %></dd>
 <% end %>
+
+<div id="facebook_app">
+      <h2>Awesome People</h2>
+  <div id="nav">
+    <% if current_user %>
+         Hello, <%= current_user.first_name %> | <%= link_to "Sign out", signout_path %>
+    <% else %>
+        <%= link_to "Login With Facebook", "/auth/facebook", :class => "connect_with_facebook_button" %>
+        <h3>Please, connect ONLY if you are Awesome.</h3>
+    <% end %>
+  </div>
+
+  <% if current_user %>
+    <div id="friends">
+      <p><%= link_to "Invite Your Facebook Friends", "root_path", :id => "invite_fb_friends" %></p>
+<% end %>
+<% end %>
+
+      
