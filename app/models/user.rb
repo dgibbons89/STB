@@ -40,6 +40,7 @@ end
   def friends_count
     facebook { |fb| fb.get_connection("me", "friends").size }
   end
+ 
 
   validates :name, presence: true
 end

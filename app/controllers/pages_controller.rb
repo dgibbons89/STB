@@ -5,4 +5,8 @@ class PagesController < ApplicationController
   end
   def resources
   end
+
+
+
+ 
 end
