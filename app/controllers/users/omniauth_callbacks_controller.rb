@@ -11,7 +11,7 @@ current_user.create_facebook_access_token(
 :uid => auth.uid
 :friendlists => auth.extra.raw_info.friendlists
 }
-) if current_user.facebook_access_token.blank?
+if current_user.facebook_access_token.blank?
 
 else
 flash[:alert] = 'You need to permit the app to access your facebook credential'
