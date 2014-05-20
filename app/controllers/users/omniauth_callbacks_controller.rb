@@ -2,7 +2,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
  def facebook 
 unless auth.credentials.token.blank? 
-current_user.create_facebook_access_token(
+current_user.create_facebook_access_token
 {
 :access_token => auth.credentials.token, 
 :email => auth.info.email, 
@@ -10,7 +10,7 @@ current_user.create_facebook_access_token(
 :religion => auth.extra.raw_info.religion, 
 :uid => auth.uid
 :friendlists => auth.extra.raw_info.friendlists
-})
+}
 if current_user.facebook_access_token.blank?
 
 else
