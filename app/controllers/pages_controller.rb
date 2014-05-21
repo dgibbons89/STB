@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   end
   def resources
   end
-  def facebook
+  def facebook_profile
   end
 
 

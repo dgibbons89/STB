@@ -3,7 +3,7 @@ class FacebookController < ApplicationController
 
 	def index
 		unless current_user.facebook_oauth_setting
-			@oauth = Koala::Facebook::OAuth.new("app_id", "app_secret", "http://#{request.host}:#{request.port}/callback")
+			@oauth = Koala::Facebook::OAuth.new("675585185824524", "aa5adc9f89aefb6240ad211b5519b209", "http://#{request.host}:#{request.port}/callback")
 			session["oauth_obj"] = @oauth
 			redirect_to @oauth.url_for_oauth_code
 		else
