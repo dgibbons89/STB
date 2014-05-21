@@ -43,7 +43,7 @@ end
     facebook { |fb| fb.get_connection("me", "friends").size }
   end
 
-  def friends
+  def show
      @graph.get_connections("me", "friends")
      @friends = graph.get_connections(user["id"], "friends?fields=id,name,link")
   end
