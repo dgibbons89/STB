@@ -1,3 +1,5 @@
 class FacebookOauthSetting < ActiveRecord::Base
-	belongs_to :user
+  attr_accessible :access_token, :user_id
+
+  belongs_to :user
 end

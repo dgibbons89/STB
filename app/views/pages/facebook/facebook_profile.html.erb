@@ -1,0 +1,19 @@
+<dd><%= current_user.email %></dd>
+<div class="row">
+  <div class="span4">
+    <div class="thumbnail">
+
+	<div class="span5">
+	<h1>Friends</h1>
+  	<table class="table table-striped">
+  	  <tr>
+  	  	<th>Name</th>
+  	  </tr>
+  		<% @friends.each do |f| %>
+	  	  <tr>
+	  	  	<td><a href="http://facebook.com/<%= f["id"] %>"><%= f["name"] %></a></td>
+	  	  </tr>
+  	  <% end %>
+	</table>
+  </div>
+</div>

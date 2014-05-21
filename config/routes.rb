@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   
 
   
-
+  get "/facebook_profile" => "facebook#facebook_profile"
   root "pictures#index"
   get "faq" => "pages#faq"
   get "resources" => "pages#resources"
