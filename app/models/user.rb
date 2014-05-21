@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :pictures, dependent: :destroy
   has_many :authentications, :dependent => :delete_all
   has_one :facebook_access_token
-  has_one :facebook_oauth_setting
+  
   has_many :friends
   def apply_omniauth(auth)
   # In previous omniauth, 'user_info' was used in place of 'raw_info'
@@ -31,22 +31,8 @@ end
   end
 end
 
-  def facebook
-    @facebook ||= Koala::Facebook::API.new(oauth_token)
-    block_given? ? yield(@facebook) : @facebook
-  rescue Koala::Facebook::APIError => e
-    logger.info e.to_s
-    nil # or consider a custom null object
-  end
+  
 
-  def friends_count
-    facebook { |fb| fb.get_connection("me", "friends").size }
-  end
-
-  def show
-     @graph.get_connections("me", "friends")
-     @friends = graph.get_connections(user["id"], "friends?fields=id,name,link")
-  end
  
 
   validates :name, presence: true
