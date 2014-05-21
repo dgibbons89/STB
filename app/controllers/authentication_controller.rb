@@ -6,7 +6,9 @@ class AuthenticationsController < ApplicationController
     if @user.save
       UserMailer.registration_confirmation(@user).deliver
     redirect_to root_url
+    end
   end
+
 
   def destroy
     session[:user_id] = nil
