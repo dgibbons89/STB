@@ -24,7 +24,7 @@ gem 'oauth2'
 gem 'certified', '~> 0.1.2'
 gem 'koala', '~> 1.9.0'
 gem 'activeadmin', github: 'gregbell/active_admin'
-gem 'roadie', '~> 2.4.3'
+
 
 
 
