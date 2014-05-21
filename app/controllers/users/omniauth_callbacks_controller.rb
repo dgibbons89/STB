@@ -2,22 +2,17 @@ class Users: :OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
 
 
- def facebook 
-unless auth.credentials.token.blank? 
-current_user.create_facebook_access_token(
-{
-:access_token => auth.credentials.token, 
-:email => auth.info.email, 
-:political => auth.extra.raw_info.political, 
-:religion => auth.extra.raw_info.religion, 
-:uid => auth.uid
-:friendlists => auth.extra.raw_info.friendlists
-}
-) if current_user.facebook_access_token.blank?
+ def facebook
+ # You need to implement the method below in your model (e.g. app/models/user.rb)
+ @user = User.find_for_facebook_oauth(request.env["omniauth.auth"], current_user)
 
+if @user.persisted?
+  sign_in_and_redirect @user, :event => :authentication #this will throw if @user is not activated
+  set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?
 else
-flash[:alert] = 'You need to permit the app to access your facebook credential'
+  session["devise.facebook_data"] = request.env["omniauth.auth"]
+  redirect_to root_path
 end
-redirect_to root_path
-end
+ end
+
 end
