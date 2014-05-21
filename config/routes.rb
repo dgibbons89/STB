@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   resources :users
   resources :videos	
 
-  
+  resources :friends do
+  post 'fb_friends',  on: :collection
+  end
   
 
   
