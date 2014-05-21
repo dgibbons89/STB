@@ -2,4 +2,16 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+$(document).ready(function(){
+var loadFbFriendlist = function(){
 
+$.post('/friends/fb_friends',
+{
+level: 1
+}, function(res){
+$('#fbFriends').html(res);
+});
+}
+
+loadFbFriendlist();
+});
