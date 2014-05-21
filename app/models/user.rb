@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   has_many :pictures, dependent: :destroy
   has_many :authentications, :dependent => :delete_all
-  has_one :facebook_access_token
+  
   
   has_many :friends
   def apply_omniauth(auth)
