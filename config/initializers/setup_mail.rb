@@ -3,7 +3,7 @@ ActionMailer::Base.smtp_settings = {
   :port                 => 587,
   :domain               => "http://safe-brook-9428.herokuapp.com/",
   :user_name            => "dgibbons89@gmail.com",
-  :password             => "bbsyDV6W",
+  :password             => 
   :authentication       => "plain",
   :enable_starttls_auto => true
 }
