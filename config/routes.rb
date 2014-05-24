@@ -9,11 +9,14 @@ Rails.application.routes.draw do
   	end
   end
   resources :users
-  resources :videos	
+  	
 
-  resources :friends do
-  post 'fb_friends',  on: :collection
+  resources :videos do
+    member do
+      post 'upvote'
+    end
   end
+  
   
 
   

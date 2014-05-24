@@ -1,7 +1,10 @@
 module Paperclip
-  class MediaTypeSpoofDetector
-    def spoofed?
-      false
-    end
-  end
+	class MyProcessor
+	  	def spoofed?
+	      false
+	    end
+	end
 end
+
+
+   

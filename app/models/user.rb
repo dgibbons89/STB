@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   
 
   has_many :pictures, dependent: :destroy
+  has_many :videos, dependent: :destroy
   has_many :authentications, :dependent => :delete_all
   
   

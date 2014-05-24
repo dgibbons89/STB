@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 ruby '2.0.0'
 
-gem 'paperclip', github: 'thoughtbot/paperclip'
+gem 'paperclip', '~> 3.5.3'
 gem 'cocaine', '~> 0.5.3'
+gem 'paperclip-ffmpeg'
 gem 'omniauth'
 gem 'omniauth-facebook', '~> 1.4.0'
 gem 'bootstrap-sass'
@@ -24,6 +25,7 @@ gem 'oauth2'
 gem 'certified', '~> 0.1.2'
 gem 'koala', '~> 1.9.0'
 gem 'activeadmin', github: 'gregbell/active_admin'
+
 
 
 
