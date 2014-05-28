@@ -15,4 +15,6 @@
 //= require jquery.turbolinks
 //= require turbolinks
 //= require masonry/jquery.masonry
+//= require jquery.countdown
 //= require_tree .
+
