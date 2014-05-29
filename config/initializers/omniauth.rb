@@ -5,8 +5,8 @@ Rails.application.config.middleware.use OmniAuth::Builder do
                       user_religion_politics,
                       user_status,user_work_history,
                       publish_stream, offline_access,
-                      friends_about_me',
-                      
+                      friends_about_me'
+
                       
                       # friends_activities,friends_birthday,friends_education_history,friends_events,
                       # friends_groups,friends_hometown,friends_interests,friends_likes,friends_location,
