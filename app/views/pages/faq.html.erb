@@ -1,57 +1,12 @@
-<script src=”http://connect.facebook.net/en_US/all.js”></script>
+<head>
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-<script>
-
-FB.init({
-
-appId: “<%= Facebook.config[:client_id] %>”,
-
-cookie: true,
-
-xfbml: true,
-
-oauth: true,
-
-status: true
-
-});
+  ga('create', 'UA-51273388-1', 'heroku.com');
+  ga('send', 'pageview');
 
 </script>
-
-<script type=”text/javascript”>
-
-$(function () {
-
-<% if flash[:error] %>
-
-$.gritter.add({
-
-title: “<%= flash[:error][:title] %>”,
-
-text : “<%= flash[:error][:message] %>”,
-
-image: “<%= flash[:error][:image] %>”,
-
-time : 5000
-
-});
-
-<% elsif flash[:notice] %>
-
-$.gritter.add({
-
-title: “<%= flash[:notice][:title] %>”,
-
-text : “<%= flash[:notice][:message] %>”,
-
-image: “<%= flash[:notice][:image] %>”,
-
-time : 3000
-
-});
-
-<% end %>
-
-});
-
-</script>
+</head>
