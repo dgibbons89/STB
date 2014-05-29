@@ -1,19 +1,13 @@
-<div id="fb-root"></div>
-<a href="#" id="invite_fb_friends">Invite your friends</a>
-<script src="http://connect.facebook.net/en_US/all.js"></script>
-<script>
-$(function(){
-    $("a#invite_fb_friends").click(function(){
-        FB.init({
-        appId: '675585185824524',
-        status: true,
-        cookie: false,
-        // xfbml: true
-        });
 
-FB.ui({
-method: 'apprequests',
-message: '<%=current_user.name %> has invite you to a party for <%=get_current_board.bp_name%>'});
-});
-});
-</script>
+<div class="modal fade" id="fbfriends" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+ <div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title" id="myModalLabel">Invite your friends!</h4>
+    </div>
+    <div class="modal-body">
+      list_of_facbook_friends
+    </div>
+  </div>
+ </div>
+</div>

@@ -34,7 +34,9 @@ end
 
   
 
- 
+ def friend_invite
+ @friends = current_user.facebook.get_connections("me")   
+end
 
   validates :name, presence: true
 end
