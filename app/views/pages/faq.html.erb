@@ -28,7 +28,18 @@
     </div>
   <% end %>
   
- 
+ <div id="awesome_friends">
+
+    <table>
+      <% @users.each do |user| %>
+      <tr>
+        <td><%= user.first_name %> <%= user.last_name %> is Awesome!</td>
+      </tr>
+      <% end %>
+    </table>
+
+
+  </div>
 </div>
 
 
