@@ -1,43 +1,34 @@
 <head>
-<div id="friends">
-<p>  <%= link_to "Invite your Facebook friends", "#", :id => "invite_fb_friends" %> </p>
-    <div id="fb-root"></div>
-    <script src="http://connect.facebook.net/en_US/all.js"></script>
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+<script>
+FB.init({
+appId:'675585185824524',
+cookie:true,
+status:true,
+xfbml:true
+});
 
-    <% if !Rails.env.development? %>
-        <script>
-            $(function() {
-                $("a#invite_fb_friends").click(function() {
-                    FB.init ({
-                        appId: '675585185824524',
-                        cookie:true,
-                        status: true,
-                        oauth: true
+function FacebookInviteFriends()
+{
+FB.ui({
+method: 'apprequests',
+message: 'Your Message diaolog'
+});
+}
+</script>
 
-                    });
-                    FB.ui({method: 'apprequests', message:'Hey! We need beta testers for this new app. No spam, ' +
-                            'a bit of thinking before posting, and fun with friends.'  });
-                });
-            });
-        </script>
-    <% else %>
-        <script>
-            $(function() {
-                $("a#invite_fb_friends").click(function() {
-                    FB.init ({
-                        appId: '675585185824524',
-                        cookie:false,
-                        status: true,
-                        oauth: true
 
-                    });
-                    FB.ui({method: 'apprequests', message:'Hey! We need beta testers for this new app. No spam, ' +
-                            'a bit of thinking before posting, and fun with friends.'  });
-                });
-            });
-        </script>
-    <% end %>
-</div>
+//HTML Code
+<div id="fb-root"></div>
+<a href='#' onclick="FacebookInviteFriends();"> 
+Facebook Invite Friends Link
+</a>
+<script type='text/javascript'>
+if (top.location!= self.location)
+{
+top.location = self.location
+}
+</script>
 
 
 
