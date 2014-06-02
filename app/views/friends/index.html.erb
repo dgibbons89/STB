@@ -1,3 +1,4 @@
 <p>Show Friends</p>
+<% @api = Koala::Facebook::API.new(session[:access_token]) %>
 <%= @friends = @api.get_connections(user_profile["id"], "friends") %>
 <% end %>
