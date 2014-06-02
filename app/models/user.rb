@@ -11,6 +11,12 @@ class User < ActiveRecord::Base
   
   
   has_many :friends
+
+  def facebook
+  @facebook ||= Koala::Facebook::API.new(oauth_token)
+  end
+
+
   def apply_omniauth(auth)
   # In previous omniauth, 'user_info' was used in place of 'raw_info'
   self.email = auth['extra']['raw_info']['email']
