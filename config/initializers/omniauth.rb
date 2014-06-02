@@ -1,11 +1,6 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider :facebook , '675585185824524', 'aa5adc9f89aefb6240ad211b5519b209', :iframe => true, 
-      :scope => 'email, user_about_me,user_activities,user_birthday,user_education_history,
-                      user_events,user_groups,user_hometown,user_interests,user_likes, user_location,
-                      user_religion_politics,
-                      user_status,user_work_history,
-                      publish_stream, offline_access,
-                      friends_about_me'
+      :scope => 'email, user_birthday, offline_access, user_friends, read_friendlists', :display => "popup"
 
                       
                       # friends_activities,friends_birthday,friends_education_history,friends_events,
