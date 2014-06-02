@@ -28,7 +28,7 @@ class FriendsController < ApplicationController
         session[:oauth] = Koala::Facebook::OAuth.new('675585185824524', 'aa5adc9f89aefb6240ad211b5519b209', 'www.stolobu.com' + '/')
         @auth_url =  session[:oauth].url_for_oauth_code(:permissions=>"friends")  
  
-        redirect_to @auth_url
+        redirect_to friends_path
     end
      
     #########################################################
