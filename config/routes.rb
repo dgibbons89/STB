@@ -16,7 +16,10 @@ Rails.application.routes.draw do
       post 'upvote'
     end
   end
-  
+
+  resources :friends
+  get '/index' => 'friends#index'
+  get '/login' => 'friends#login'
   
 
   
