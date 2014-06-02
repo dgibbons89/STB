@@ -2,7 +2,7 @@
 # Many of these configuration options can be set straight in your model.
 
 Devise.setup do |config|
-   config.omniauth :facebook, "675585185824524", "aa5adc9f89aefb6240ad211b5519b209", 
+   config.omniauth :facebook, "675585185824524", "aa5adc9f89aefb6240ad211b5519b209", :iframe => true,
   :scope => 'email, offline_access, user_friends, read_friendlists', :display => "popup"
 
   
