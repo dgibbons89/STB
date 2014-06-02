@@ -23,13 +23,16 @@ message: 'get your friends signed up'
 <a href='#' onclick="FacebookInviteFriends();"> 
 Get your friends on board
 </a>
-<script type='text/javascript'>
-if (top.location!= self.location)
-{
-top.location = self.location
-}
+<script type="text/javascript">
+  <!--
+    if (top.location!= self.location) {
+      top.location = self.location.href
+    }
+  //-->
 </script>
-
+<p>Show Friends</p>
+<%= @friends = @api.get_connections(user_profile["id"], "friends") %>
+<% end %>
 
 
 	<script>
