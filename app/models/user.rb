@@ -11,11 +11,15 @@ class User < ActiveRecord::Base
   has_one :facebook_oauth_setting
   
   
-  has_many :friends
+  
 
-  def facebook
-    @facebook = Koala::Facebook::API.new(oauth_token)
-  end
+    def facebook
+      @facebook ||= Koala::Facebook::API.new(oauth_token)
+      block_given? ? yield(@facebook) : @facebook
+    rescue Koala::Facebook::APIError => e
+      logger.info e.to_s
+      nil
+    end
 
 
   def apply_omniauth(auth)
