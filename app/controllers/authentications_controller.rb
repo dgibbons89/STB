@@ -39,7 +39,7 @@ end
         FacebookOauthSetting.create({:access_token => @oauth.get_access_token(params[:code]), :user_id => current_user.id})
         redirect_to "/facebook_profile"
     else
-        redirect_to authentications_url
+        redirect_to "/"
     end
 end
 
@@ -48,7 +48,7 @@ def facebook_profile
         @graph = Koala::Facebook::API.new(current_user.facebook_oauth_setting.access_token)
         @friends = @graph.get_connections("me", "friends")
     else
-        redirect_to authentications_url
+        redirect_to "/"
     end
 end
 	
