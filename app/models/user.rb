@@ -13,7 +13,9 @@ class User < ActiveRecord::Base
   
   has_many :friends
 
- 
+  def facebook
+    @facebook = Koala::Facebook::API.new(oauth_token)
+  end
 
 
   def apply_omniauth(auth)
