@@ -17,9 +17,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :friends
-  get '/index' => 'friends#index'
-  get '/login' => 'friends#login'
+  resources :authentications
+  get '/index' => 'authentications#index'
+  get '/login' => 'authentications#login'
   
 
   
