@@ -15,7 +15,7 @@ class AuthenticationsController < ApplicationController
     redirect_to root_url
   end
 
-  def friendlist
+  def index
     @user_fb_token = current_user.oauth_token
 
     unless @user_fb_token.blank?
