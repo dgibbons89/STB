@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   has_many :videos, dependent: :destroy
   has_many :authentications, :dependent => :delete_all
   has_one :facebook_oauth_setting
-  has_many :friendlists
+  has_one :friendlist
   
   
   

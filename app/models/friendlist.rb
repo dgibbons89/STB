@@ -1,4 +1,5 @@
-class FbFriends < ActiveRecord::Base
+class Friendlist < ActiveRecord::Base
  
   belongs_to :user
+
 end
