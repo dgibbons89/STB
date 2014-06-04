@@ -54,7 +54,7 @@ end
   end
 
   def fb_friends
-    @user_fb_token = User.facebook_access_token
+    @user_fb_token = User.oauth_token
 
     unless @user_fb_token.blank?
       @fb_friends = FbGraph::User.me(@user_fb_token.access_token).friends
