@@ -66,7 +66,9 @@ end
   end
 
 
-  def friends_count
+
+
+ def friends_count
     facebook { |fb| fb.get_connection("me", "friends").size }
   end
 
@@ -100,9 +102,7 @@ end
     end
     birthday || nil
   end
-
-
-
+  
 
  
 end
