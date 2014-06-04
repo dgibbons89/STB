@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :pictures, dependent: :destroy
   has_many :videos, dependent: :destroy
   has_many :authentications, :dependent => :delete_all
-  has_one :facebook_oauth_setting
+  has_one :facebook_oauth_token
   has_one :friendlist
   
   

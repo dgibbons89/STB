@@ -19,13 +19,11 @@ Loading....
 <div class="clearfix"></div>
 </div>
 </div>
-<% unless @user_fb_token.blank?%>
+<% unless @user_oauth_token.blank?%>
 <% unless @friendlist.blank? %>
 
 <% @friendlist.each do |friendlist| %>
-<div class='float-left fb-avatar-section'>
-<%= image_tag "http://graph.facebook.com/#{fb_friend.identifier}/picture", :class => 'float-left' %>
-<div class='float-left fb-avatar-desc'>
+
 <div class='float-left full-width fb-avatar-name' id="fb_name_<%= friendlist.identifier%>">
 <%= friendlist.raw_attributes['name'] %>
 </div>
@@ -33,12 +31,6 @@ Loading....
 </div>
 <% end %>
 
-<% else %>
-You do not have any facebook friends to invite
-<% end %>
-<% else %>
-<%= link_to('Connect to facebook', user_omniauth_authorize_path('facebook'), :class => 'display-block ') %>
-<% end %>
 <script> 
 $(document).ready(function(){
 var loadFbFriendlist = function(){
