@@ -8,11 +8,11 @@ class User < ActiveRecord::Base
   has_many :pictures, dependent: :destroy
   has_many :videos, dependent: :destroy
   has_many :authentications, :dependent => :delete_all
-  has_one :facebook_oauth_token
-  has_one :friendlist
+ 
   
   
   
+  validates :name, presence: true
 
  
 
@@ -45,15 +45,29 @@ end
 end
 
   def self.create_with_omniauth(auth)  
-    create! do |user|
-      user.first_name = auth["user_info"]["first_name"]
-      user.last_name = auth["user_info"]["last_name"]
-      user.email = auth["user_info"]["email"]
-      user.fb_uid = auth["uid"]
-      user.fb_token = auth["credentials"]["token"]
+     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.name = auth.info.name
+      user.oauth_token = auth.credentials.token
+      user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+      user.save!
     end
   end
 
+  def facebook
+    @facebook ||= Koala::Facebook::API.new(oauth_token)
+    block_given? ? yield(@facebook) : @facebook
+  rescue Koala::Facebook::APIError => e
+    logger.info e.to_s
+    nil # or consider a custom null object
+  end
+
   
-  validates :name, presence: true
+
+  has_many :friends
 end
+
+  
+  
+

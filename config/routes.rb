@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get '/index' => 'authentications#index'
   get '/login' => 'authentications#login'
 
+
   
   root "pictures#index"
   get "faq" => "pages#faq"
