@@ -19,7 +19,7 @@ class AuthenticationsController < ApplicationController
     @user_fb_token = current_user.oauth_token
 
     unless @user_fb_token.blank?
-      @friendlist = FbGraph::User.me(@user_fb_token.access_token).friends
+      @friendlist = FbGraph::User.me(@user_fb_token.oauth_token).friends
       @friendlist = @friendlist.sort_by { |fb_frnd| fb_frnd.raw_attributes['name']}
     end
   end
