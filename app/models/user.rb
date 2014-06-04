@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :videos, dependent: :destroy
   has_many :authentications, :dependent => :delete_all
   has_one :facebook_oauth_setting
+  has_many :fb_friends
   
   
   
@@ -53,14 +54,6 @@ end
     end
   end
 
-  def fb_friends
-    @user_fb_token = current_user.oauth_token
-
-    unless @user_fb_token.blank?
-      @fb_friends = FbGraph::User.me(@user_fb_token.access_token).friends
-      @fb_friends = @fb_friends.sort_by { |fb_frnd| fb_frnd.raw_attributes['name']}
-    end
-  end
-
+  
   validates :name, presence: true
 end
