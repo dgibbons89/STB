@@ -15,12 +15,12 @@ class AuthenticationsController < ApplicationController
     redirect_to root_url
   end
 
-  def index
+  def friendlist
     @user_fb_token = current_user.oauth_token
 
     unless @user_fb_token.blank?
-      @friendlists = FbGraph::User.me(@user_fb_token.access_token).friends
-      @friendlists = @friendlist.sort_by { |fb_frnd| fb_frnd.raw_attributes['name']}
+      @friendlist = FbGraph::User.me(@user_fb_token.access_token).friends
+      @friendlist = @friendlist.sort_by { |fb_frnd| fb_frnd.raw_attributes['name']}
     end
   end
 

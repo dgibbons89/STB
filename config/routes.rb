@@ -24,7 +24,6 @@ Rails.application.routes.draw do
   
   root "pictures#index"
   get "faq" => "pages#faq"
-  get "resources" => "pages#resources"
   get "facebook" => "pages#facebook"
 
   get '/auth/:provider/callback' => 'authentications#create'

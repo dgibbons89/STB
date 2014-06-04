@@ -1,4 +1,56 @@
-<p>Show Friends</p>
-<% if user_signed_in? %>
-<%= current_user.friendlist %>
+
+
+<div class="span6">
+<div class="portlet box yellow">
+<div class="portlet-title">
+<h4 class="glyphicons no-js facebook">
+<i></i>
+Facebook Friend list
+</h4>
+<div class="tools">
+<a class="collapse" href="javascript:;"></a>
+<a class="reload" href="javascript:;"></a>
+</div>
+</div>
+<div class="portlet-body" style="display: block;" id="fbPortlet">
+<div id="friendlist" class="span12 float-left">
+Loading....
+</div>
+<div class="clearfix"></div>
+</div>
+</div>
+<% unless @user_fb_token.blank?%>
+<% unless @friendlist.blank? %>
+
+<% @friendlist.each do |friendlist| %>
+<div class='float-left fb-avatar-section'>
+<%= image_tag "http://graph.facebook.com/#{fb_friend.identifier}/picture", :class => 'float-left' %>
+<div class='float-left fb-avatar-desc'>
+<div class='float-left full-width fb-avatar-name' id="fb_name_<%= friendlist.identifier%>">
+<%= friendlist.raw_attributes['name'] %>
+</div>
+<div>
+</div>
 <% end %>
+
+<% else %>
+You do not have any facebook friends to invite
+<% end %>
+<% else %>
+<%= link_to('Connect to facebook', user_omniauth_authorize_path('facebook'), :class => 'display-block ') %>
+<% end %>
+<script> 
+$(document).ready(function(){
+var loadFbFriendlist = function(){
+
+$.post('/friends/friendlist',
+{
+level: 1
+}, function(res){
+$('#friendlist').html(res);
+});
+}
+
+loadfriendlist();
+});
+</script>
