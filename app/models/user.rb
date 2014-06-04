@@ -8,18 +8,12 @@ class User < ActiveRecord::Base
   has_many :pictures, dependent: :destroy
   has_many :videos, dependent: :destroy
   has_many :authentications, :dependent => :delete_all
-  
+  has_one :facebook_oauth_setting
   
   
   
 
-    def facebook
-      @facebook ||= Koala::Facebook::API.new(oauth_token)
-      block_given? ? yield(@facebook) : @facebook
-    rescue Koala::Facebook::APIError => e
-      logger.info e.to_s
-      nil
-    end
+ 
 
 
   def apply_omniauth(auth)
