@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :pictures, dependent: :destroy
   has_many :videos, dependent: :destroy
   has_many :authentications, :dependent => :delete_all
-  has_one :facebook_oauth_setting
+  
   
   
   
@@ -56,6 +56,15 @@ end
       user.email = auth["user_info"]["email"]
       user.fb_uid = auth["uid"]
       user.fb_token = auth["credentials"]["token"]
+    end
+  end
+
+  def fb_friends
+    @user_fb_token = User.facebook_access_token
+
+    unless @user_fb_token.blank?
+      @fb_friends = FbGraph::User.me(@user_fb_token.access_token).friends
+      @fb_friends = @fb_friends.sort_by { |fb_frnd| fb_frnd.raw_attributes['name']}
     end
   end
 

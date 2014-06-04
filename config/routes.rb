@@ -20,10 +20,7 @@ Rails.application.routes.draw do
   resources :authentications
   get '/index' => 'authentications#index'
   get '/login' => 'authentications#login'
-  
-get "authentications/callback" => "authentications#callback"
-get "/facebook_profile" => "authentications#facebook_profile"
-  
+
   
   root "pictures#index"
   get "faq" => "pages#faq"
