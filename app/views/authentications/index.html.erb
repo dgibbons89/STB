@@ -1,4 +1,4 @@
 <p>Show Friends</p>
-<% if current_user %>
+<% if user_signed_in? %>
 <%= @User.fb_friends %>
 <% end %>
