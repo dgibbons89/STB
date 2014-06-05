@@ -30,19 +30,7 @@ Get your friends on board
     }
   //-->
 </script>
-<p>Friends</p>
-<% if current_user %>
-  </tr>
-      <% current_user.friends.each do |d| %>
-        <% days.flatten.each do |d| %>
-          <tr>
-            <td><%= d["name"] %></td>
-            <td><%= d["birthday"] %></td>
-          </tr>
-        <% end unless days.nil? %>
-      <% end %>
-      <tr>
-        <% end %>
+
 
 
 	<script>
