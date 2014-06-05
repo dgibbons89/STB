@@ -7,9 +7,8 @@ class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
 
-  def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
-  end
+  
+  
 
 
   protected
@@ -22,7 +21,9 @@ class ApplicationController < ActionController::Base
   
   helper_method :current_user
   private
-  
+  def current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
   
 
   def record_not_found
