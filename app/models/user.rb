@@ -72,9 +72,7 @@ end
     facebook { |fb| fb.get_connection("me", "friends").size }
   end
 
-  def friends
-    @friends ||= facebook { |fb| fb.get_connections("me", "friends", "fields"=>"name,birthday") }
-  end
+  has_many :friends
 
   
 
@@ -92,6 +90,9 @@ end
     end
     birthdays
   end
+
+  
+
 
   private
 

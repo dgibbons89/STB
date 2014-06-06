@@ -11,3 +11,7 @@
       <% end %>
       <tr>
         <% end %>
+
+<% if current_user %>
+  Number of Friends: <%= current_user.friends_count %>
+<% end %>
