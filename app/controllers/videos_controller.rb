@@ -57,11 +57,11 @@ class VideosController < ApplicationController
     def set_video
       @video = Video.find(params[:id])
     end
-
     def correct_user
       @video = current_user.videos.find_by(id: params[:id])
       redirect_to videos_path, notice: "Not authorized to edit this video" if @video.nil?
     end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def video_params

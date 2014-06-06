@@ -57,11 +57,11 @@ class PicturesController < ApplicationController
     def set_picture
       @picture = Picture.find(params[:id])
     end
-
     def correct_user
       @picture = current_user.pictures.find_by(id: params[:id])
       redirect_to pictures_path, notice: "Not authorized to edit this picture" if @picture.nil?
     end
+   
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def picture_params

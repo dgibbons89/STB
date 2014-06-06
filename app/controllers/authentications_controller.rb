@@ -14,7 +14,7 @@ class AuthenticationsController < ApplicationController
   end
   
 
-
+  
   
 	
 

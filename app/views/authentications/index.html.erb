@@ -1,21 +1,6 @@
 <p>Friends</p>
-<% if current_user %>
-  </tr>
-      <% current_user.friends.each do |d| %>
-        <% days.flatten.each do |d| %>
-          <tr>
-            <td><%= d["name"] %></td>
-            <td><%= d["birthday"] %></td>
-          </tr>
-        <% end unless days.nil? %>
-      <% end %>
-      <tr>
-        <% end %>
 
 <% if current_user %>
   Number of Friends: <%= current_user.friends_count %>
 <% end %>
 
-<% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, id: "flash_#{name}" %>
-      <% end %>
