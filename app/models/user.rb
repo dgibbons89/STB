@@ -68,8 +68,8 @@ end
 
 
 
- def friends_count
-    facebook { |fb| fb.get_connection("me", "friends").size }
+  def friends_count
+    facebook.get_connection("me", "friends").size
   end
 
   def friends
