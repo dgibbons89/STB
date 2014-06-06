@@ -1,4 +1,4 @@
 production:
   facebook_app_id: "675585185824524"
   facebook_secret: "aa5adc9f89aefb6240ad211b5519b209"
-  facebook_scope: "email,user_birthday,friends,user_likes,friends_birthday,friends_likes"
+  facebook_scope: "email,user_birthday,user_friends,user_likes,friends_birthday,friends_likes"
