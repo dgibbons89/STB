@@ -57,20 +57,17 @@ end
     end
   end
 
-  def facebook
-    @facebook ||= Koala::Facebook::API.new(oauth_token)
-    block_given? ? yield(@facebook) : @facebook
-  rescue Koala::Facebook::APIError => e
-    logger.info e.to_s
-    nil # or consider a custom null object
-  end
-
-
-
-
-  def friends_count
-    facebook.get_connection("me", "friends").size
-  end
+ def facebook
+  @facebook ||= Koala::Facebook::API.new(oauth_token)
+  block_given? ? yield(@facebook) : @facebook
+rescue Koala::Facebook::APIError
+  logger.info e.to_s
+  nil
+end
+  
+def friends_count
+  facebook { |fb| fb.get_connection("me", "friends").size }
+end
 
   def friends
     @friends ||= facebook { |fb| fb.get_connections("me", "friends", "fields"=>"name,birthday") }
