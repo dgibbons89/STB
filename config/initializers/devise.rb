@@ -1,6 +1,6 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
-
+require 'omniauth-facebook'
 Devise.setup do |config|
    config.omniauth :facebook, "675585185824524", "aa5adc9f89aefb6240ad211b5519b209", 
   :scope => 'email, offline_access, user_birthday, user_friends, read_friendlists, friends_birthday', :display => "popup", 
@@ -26,7 +26,7 @@ Devise.setup do |config|
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
   require 'devise/orm/active_record'
-  require 'omniauth-facebook'
+  
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
