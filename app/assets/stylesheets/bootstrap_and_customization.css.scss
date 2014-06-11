@@ -16,3 +16,15 @@ $jumbotron-bg:                                         white;
 .navbar-brand {
      font-weight: bold;
 }
+.button_to {
+  display: inline;
+  margin: 0;
+  padding: 10px;
+  div { display: inline; }
+  input[type=submit] {
+    margin: 0;
+    padding: 10px;
+    -webkit-appearance: caret;
+    
+  }
+}

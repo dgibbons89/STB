@@ -6,6 +6,7 @@ class PicturesController < ApplicationController
 
 
   def index
+    @videos = Video.all
     if params[:search]
       @pictures = Picture.search(params[:search]).order("created_at DESC").paginate(:page => params[:page], :per_page => 15)
     else
@@ -16,7 +17,7 @@ class PicturesController < ApplicationController
   def upvote
     @picture = Picture.find(params[:id])
     @picture.votes.create
-    redirect_to picture_path, :notice => "You know this person!"
+    redirect_to pictures_path, :notice => "You know this person!"
   end
  
   
@@ -33,7 +34,7 @@ class PicturesController < ApplicationController
   def create
     @picture = current_user.pictures.build(picture_params)
     if @picture.save
-      redirect_to @picture, notice: 'Picture was successfully created.'
+      redirect_to picture_path, notice: 'Picture was successfully created.'
     else
       render action: 'new'
     end

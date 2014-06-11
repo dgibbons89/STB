@@ -16,7 +16,7 @@ class VideosController < ApplicationController
   def upvote
     @video = Video.find(params[:id])
     @video.votes.create
-    redirect_to video_path, :notice => "You know this person!"
+    redirect_to videos_path, :notice => "You know this person!"
   end
  
   
