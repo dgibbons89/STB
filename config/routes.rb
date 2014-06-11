@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   get 'media/index'
 
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
+  
+  
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
 
   resources :pictures do
@@ -19,12 +19,10 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :authentications
-  get '/index' => 'authentications#index'
-  get '/login' => 'authentications#login'
-
-
   
+
+
+  match '/profile/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
   root "pictures#index"
   get "faq" => "pages#faq"
   get "facebook" => "pages#facebook"

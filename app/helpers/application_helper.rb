@@ -1,24 +1,19 @@
 module ApplicationHelper
 
 
-	def sortable(column, title = nil)
-  		title ||= column.titleize
-  		css_class = column == sort_column ? "current #{sort_direction}" : nil
-  		direction = column == sort_column && sort_direction == "asc" ? "desc" : "asc"
-  		link_to title, params.merge(:sort => column, :direction => direction, :page => nil), {:class => css_class}
-	end
+def display_base_errors resource
+    return '' if (resource.errors.empty?) or (resource.errors[:base].empty?)
+    messages = resource.errors[:base].map { |msg| content_tag(:p, msg) }.join
+    html = <<-HTML
+    <div class="alert alert-error alert-block">
+      <button type="button" class="close" data-dismiss="alert">&#215;</button>
+      #{messages}
+    </div>
+    HTML
+    html.html_safe
+  end
 
-	def display_month_with_increment(inc=nil)
-	    month = sanitize_month(inc)
-	    Date::MONTHNAMES[month]
-  	end
-
-  def sanitize_month(inc=nil)
-    month = Date.current.month
-    if inc.present?
-      month += inc
-      month = (month+1)%13 if month > 12
-    end
-    month
+  def active_page(option)
+    "active" if current_page?(option) == true
   end
 end

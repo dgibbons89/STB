@@ -5,7 +5,7 @@ class Video < ActiveRecord::Base
 	has_attached_file :video, :styles => {
     :medium => { :geometry => "640x480", :format => 'flv', :convert_options => {:output => {:ar => 44100}} },
     :large => { :geometry => "1024x576", :format => 'flv', :convert_options => {:output => {:ar => 44100}} },
-  }, :processors => [:ffmpeg], :swallow_stderr => false
+  	:processors => [:ffmpeg], :swallow_stderr => false
 
 	validates :zip, presence: true, numericality: { only_integer: true }
 	validates :video, presence: true
