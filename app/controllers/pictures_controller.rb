@@ -33,7 +33,7 @@ class PicturesController < ApplicationController
   def create
     @picture = current_user.pictures.build(picture_params)
     if @picture.save
-      redirect_to picture_path, notice: 'Picture was successfully created.'
+      redirect_to @picture, notice: 'Picture was successfully created.'
     else
       render action: 'new'
     end

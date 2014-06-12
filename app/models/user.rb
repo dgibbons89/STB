@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   
   validates :name, presence: true
   has_many :pictures, dependent: :destroy
-  has_many :videos, dependent: :destroy
+  
 
   validates_format_of :email, :without => TEMP_EMAIL_REGEX, on: :update
 

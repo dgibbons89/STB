@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'media/index'
+  
 
   
   
@@ -13,11 +13,7 @@ Rails.application.routes.draw do
   resources :users
   	
 
-  resources :videos do
-    member do
-      post 'upvote'
-    end
-  end
+  
 
   
 
@@ -25,7 +21,8 @@ Rails.application.routes.draw do
   match '/profile/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
   root "pictures#index"
   get "faq" => "pages#faq"
-  
+  get "terms" => "pages#terms"
+  get "resources" => "pages#resources"
   
 
 end
