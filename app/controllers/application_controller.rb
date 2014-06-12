@@ -9,13 +9,7 @@ class ApplicationController < ActionController::Base
   end
  
   
-  private
   
-    
-  
-  #def record_not_found
-    #redirect_to action: :index
-  #end
  
   
 end

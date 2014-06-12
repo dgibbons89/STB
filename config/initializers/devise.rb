@@ -1,6 +1,6 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
-require 'omniauth-facebook'
+
 Devise.setup do |config|
    config.omniauth :facebook, ENV["FACEBOOK_KEY"], ENV["FACEBOOK_SECRET"], 
   :scope => 'email, offline_access, user_birthday, user_friends, read_friendlists, friends_birthday', :display => "popup", 
@@ -10,7 +10,7 @@ Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
-  # config.secret_key = 'ac7b53b10f46c14237468f5c81699f7162242b5d7f5d3a011d90ec96891dd07a7d52d64d957b8eb516155e17c3dc71c13745764f56455054385c104622c61346'
+   config.secret_key = 'ac7b53zxcvzcvzxzxvzxcvf46c14237468f5c81699f7162242b5d7f5d3a011d90ec96891dd07a7d52d64d957b8eb516155e17c3dc71c13745764f56455054385c104622c61346'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -61,7 +61,7 @@ Devise.setup do |config|
   # given strategies, for example, `config.params_authenticatable = [:database]` will
   # enable it only for database (email + password) authentication.
   # config.params_authenticatable = true
-
+  
   # Tell if authentication through HTTP Auth is enabled. False by default.
   # It can be set to an array that will enable http authentication only for the
   # given strategies, for example, `config.http_authenticatable = [:database]` will
