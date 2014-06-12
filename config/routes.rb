@@ -14,11 +14,13 @@ Rails.application.routes.draw do
   	
 
   
-
+  get '/auth/:provider/callback' => 'registrationss#create'
+  get 'auth/failure', to: redirect('/')
+  get 'signout', to: 'registrations#destroy', as: 'signout'
   
 
 
-  match '/profile/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
+  #match '/profile/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
   root "pictures#index"
   get "faq" => "pages#faq"
   get "terms" => "pages#terms"
