@@ -2,7 +2,7 @@
 # Many of these configuration options can be set straight in your model.
 
 Devise.setup do |config|
-   config.omniauth :facebook,'506537142787997', '865dccb165d454810738fa14a63c20db', 
+   config.omniauth :facebook,'FACEBOOK_KEY', 'FACEBOOK_SECRET', 
   :scope => 'email, offline_access, user_birthday, user_friends, read_friendlists, friends_birthday', :display => "popup", 
   :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}} 
 
