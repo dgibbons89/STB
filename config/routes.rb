@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
   resources :users
 
-  match '/profile/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
+  #match '/profile/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
 
   resources :pictures do
   	member do
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   	
 
   
-  # get '/auth/:provider/callback' => 'registrationss#create'
+  match '/auth/:provider/callback' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
   # get 'auth/failure', to: redirect('/')
   # get 'signout', to: 'registrations#destroy', as: 'signout'
   
