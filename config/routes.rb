@@ -4,13 +4,16 @@ Rails.application.routes.draw do
   
   
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
+  resources :users
+
+  match '/profile/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
 
   resources :pictures do
   	member do
   		post 'upvote'
   	end
   end
-  resources :users
+  
   	
 
   
@@ -20,7 +23,6 @@ Rails.application.routes.draw do
   
 
 
-  match '/auth/:provider/callback' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
   root "pictures#index"
   get "faq" => "pages#faq"
   get "terms" => "pages#terms"
