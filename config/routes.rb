@@ -17,8 +17,8 @@ Rails.application.routes.draw do
   	
 
   
- get '/auth/:provider/callback' => 'users#finish_signup'
-  # get 'auth/failure', to: redirect('/')
+  get '/auth/:provider/callback' => 'users#finish_signup'
+  # get 'auth/failure', to: redirect('/') 
   # get 'signout', to: 'registrations#destroy', as: 'signout'
   
 
