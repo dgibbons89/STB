@@ -4,15 +4,12 @@ class User < ActiveRecord::Base
   TEMP_EMAIL_REGEX = /\Achange@me/
 
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable, 
-         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
-  
-  validates :name, presence: true
-  has_many :pictures, dependent: :destroy
-  
+  # :lockable, :timeoutable
+  devise :database_authenticatable, :registerable,
+    :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   validates_format_of :email, :without => TEMP_EMAIL_REGEX, on: :update
+  has_many :pictures, dependent: :destroy
 
   def self.find_for_oauth(auth, signed_in_resource = nil)
 
@@ -43,7 +40,7 @@ class User < ActiveRecord::Base
           email: email ? email : "#{TEMP_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
           password: Devise.friendly_token[0,20]
         )
-        user.skip_confirmation!
+        # user.skip_confirmation!
         user.save!
       end
     end
@@ -60,20 +57,3 @@ class User < ActiveRecord::Base
     self.email && self.email !~ TEMP_EMAIL_REGEX
   end
 end
-
-  
-  
-  
-
- 
-  
-  
-  
-  
-  
-  
- 
-
-  
-  
-
