@@ -1,5 +1,4 @@
-class OmniauthCallbacksController < Devise::OmniauthCallbacksController
-
+class OmniauthCallbacksController < ApplicationController
   def self.provides_callback_for(provider)
     class_eval %Q{
       def #{provider}
