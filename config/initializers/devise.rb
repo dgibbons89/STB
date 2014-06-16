@@ -3,8 +3,7 @@
 
 require 'omniauth-facebook'
 Devise.setup do |config|
-   config.omniauth :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET'], 
-  :scope => 'email, offline_access, user_birthday, user_friends, read_friendlists, friends_birthday'
+   config.omniauth :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET']
   
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
