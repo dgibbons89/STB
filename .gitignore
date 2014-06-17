@@ -19,5 +19,5 @@
 # Ignore application configuration
 /config/application.yml
 /config/omniauth-sample.yml
-/config/intializers/constants.rb
-/config/intializers/devise.rb
+/config/initializers/constants.rb
+/config/initializers/devise.rb
