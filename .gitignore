@@ -20,4 +20,4 @@
 /config/application.yml
 /config/omniauth-sample.yml
 /config/initializers/*
-**/config
+/config/**
