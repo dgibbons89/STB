@@ -20,3 +20,4 @@
 /config/application.yml
 /config/omniauth-sample.yml
 /config/intializers/constants.rb
+/config/intializers/devise.rb
