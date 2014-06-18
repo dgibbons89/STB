@@ -16,7 +16,7 @@ class PicturesController < ApplicationController
   def upvote
     @picture = Picture.find(params[:id])
     @picture.votes.create
-    redirect_to pictures_path, :notice => "You know this person!"
+    redirect_to picture_path, :notice => "You know this person!"
   end
  
   

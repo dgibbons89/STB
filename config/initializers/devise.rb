@@ -2,7 +2,7 @@
 # Many of these configuration options can be set straight in your model.
 require 'omniauth-facebook'
 Devise.setup do |config|
-   config.omniauth :facebook, "675585185824524", "aa5adc9f89aefb6240ad211b5519b209", 
+   config.omniauth :facebook, ENV["FACEBOOK_KEY"], ENV["FACEBOOK_SECRET"], 
   :scope => 'email, offline_access, user_birthday, user_friends, read_friendlists, friends_birthday', :display => "popup", 
   :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}  
   # The secret key used by Devise. Devise uses this key to generate
