@@ -26,6 +26,7 @@ gem "figaro"
 gem 'rolify'
 gem 'cancan'
 gem 'pusher'
+gem 'sendgrid'
 
 
 
