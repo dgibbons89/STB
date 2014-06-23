@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   end
   def resources
   end
-  def terms
+  def privacy
   end
 
 

@@ -26,8 +26,7 @@ Rails.application.routes.draw do
 
   root "pictures#index"
   get "faq" => "pages#faq"
-  get "terms" => "pages#terms"
-  get "resources" => "pages#resources"
+  get "privacy" => "pages#privacy"
   
 
 end
