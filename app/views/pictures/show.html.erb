@@ -16,6 +16,16 @@
         Edit
       <% end %>
     <% end %>
+    <%= form_for @picture, html: { multipart: true } do |f| %>
+    <div class="form-group" >
+    <p><strong> <%= f.label :person %> </strong></p>
+    <%= f.text_field :person,  class: "form-control",autofocus: true, placeholder: 'Who is this person?' %>
+  </div>
+  <div class="form-group">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+  <% end %> 
+
     </div>
   </div>
 
